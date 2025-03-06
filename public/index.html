@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Телефонний довідник</title>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/3.0.1/modern-normalize.min.css" integrity="sha512-q6WgHqiHlKyOqslT/lgBgodhd03Wp4BEqKeW6nNtlOY4quzyG3VoQKFrieaCeSnuVseNKRGpGeDU3qPmabCANg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link href="https://fonts.googleapis.com/css2?family=Roboto+Serif:opsz,wght@8..144,100..900&display=swap" rel="stylesheet" />
+		<link href="./styles.css" rel="stylesheet" />
+		<script src="./script.js" defer></script>
+	</head>
+	<body>
+		<header class="header">
+			<div class="container">
+				<h1 class="header-title">
+					Телефонний довідник
+					<svg class="header-title-icon" width="30" height="30">
+						<use href="./icons.svg#icon-address-book"></use>
+					</svg>
+				</h1>
+			</div>
+		</header>
+		<main class="main">
+			<section class="section section-add-contact">
+				<div class="container section-container">
+					<h2 class="section-title">Додати новий контакт</h2>
+					<form class="form-add-contact" autocomplete="off" action="" id="form-add-contact">
+						<div class="input-block">
+							<input class="input form-add-input" type="text" name="" id="contact-name" placeholder="Ім'я" />
+							<svg class="input-icon" width="20" height="20">
+								<use href="./icons.svg#icon-user"></use>
+							</svg>
+						</div>
+						<div class="input-block">
+							<input class="input form-add-input" type="tel" name="" id="contact-tel" placeholder="Номер телефону" />
+							<svg class="input-icon" width="20" height="20">
+								<use href="./icons.svg#icon-mobile"></use>
+							</svg>
+						</div>
+						<div class="input-block">
+							<input class="input form-add-input" type="email" name="" id="contact-email" placeholder="Електронна пошта" />
+							<svg class="input-icon" width="20" height="20">
+								<use href="./icons.svg#icon-mail"></use>
+							</svg>
+						</div>
+						<button class="button form-add-button" type="submit">Додати</button>
+					</form>
+				</div>
+			</section>
+			<section class="section section-search-contact">
+				<div class="container section-container">
+					<h2 class="section-title">Пошук контакту</h2>
+					<div class="filter-block">
+						<div class="input-block">
+							<input class="input filter-input" type="text" name="" id="search-input-name" onkeyup="searchFunction()" placeholder="Ім'я" />
+							<svg class="input-icon" width="20" height="20">
+								<use href="./icons.svg#icon-user"></use>
+							</svg>
+						</div>
+						<div class="input-block">
+							<input class="input filter-input" type="tel" name="" id="search-input-tel" onkeyup="searchFunction()" placeholder="Номер телефону" />
+							<svg class="input-icon" width="20" height="20">
+								<use href="./icons.svg#icon-mobile"></use>
+							</svg>
+						</div>
+						<div class="input-block">
+							<input class="input filter-input" type="email" name="" id="search-input-email" onkeyup="searchFunction()" placeholder="Електронна пошта" />
+							<svg class="input-icon" width="20" height="20">
+								<use href="./icons.svg#icon-mail"></use>
+							</svg>
+						</div>
+					</div>
+					<div class="table-wrapper">
+						<table class="table-contacts" id="table-contacts">
+							<thead class="table-contacts-head">
+								<tr class="table-contacts-row">
+									<th class="table-contacts-heading">Ім'я</th>
+									<th class="table-contacts-heading">Номер телефону</th>
+									<th class="table-contacts-heading">Електронна пошта</th>
+									<th class="table-contacts-heading">Видалити контакт</th>
+								</tr>
+							</thead>
+							<tbody class="table-contacts-body" id="table-contacts-body"></tbody>
+						</table>
+					</div>
+				</div>
+			</section>
+		</main>
+	</body>
+</html>
